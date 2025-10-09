@@ -117,9 +117,19 @@ private int numeroPassageiros;
     
     public void apresentarQuantidadePassageirosEmbarcados(){
         System.out.println("Temos " + numeroPassageiros 
-                + " embarcados no navio " + this.getNome());
+                + " passageiros embarcados no navio " + this.getNome());
     }
    
+    public void desembarcarTodosOsPassageiros(){
+        if(numeroPassageiros > 0){
+            System.out.println("Desembarcando imediatamente "
+                    + "todos os passageiros");
+            
+            numeroPassageiros = 0;
+        }else{
+            System.out.println("Não tem nenhum passageiro no navio " + this.getNome());
+        }
+    }
     
         
     @Override
