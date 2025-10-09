@@ -14,9 +14,10 @@ public class Teste {
     public static void main(String[] args) {
         NavioPassageiro titanic = new NavioPassageiro("Titanic",100000,300,100);
         
-        titanic.embarcarPassageiros(150);
-        titanic.desembarcarPassageiros(250);
+        titanic.embarcarPassageiros(100);
+        titanic.desembarcarPassageiros(10);
         titanic.apresentarQuantidadePassageirosEmbarcados();
+        titanic.desembarcarTodosOsPassageiros();;
     }
     
        
