@@ -41,17 +41,17 @@ O projeto foi organizado em pacotes para uma melhor separação de responsabilid
 
 PrjTestarClasseAbstrata/
 └── src/
-└── br/
-└── senac/
-├── classes/
-│   └── TestarClasseAbstrata.java      # ▶️ Ponto de entrada da aplicação
-├── classes/abstratas/
-│   └── Navio.java                     # 🏛️ Superclasse abstrata
-├── classes/concretas/
-│   ├── NavioPassageiro.java           # 🛳️ Subclasse para navios de passageiros
-│   └── NavioPesqueiro.java            # 🎣 Subclasse para navios de pesca
-└── classes/tipoPesca/
-└── TipoPesca.java                 # 🐠 Enum para os tipos de pesca
+    └── br/
+        └── senac/
+            └── classes/
+                ├── TestarClasseAbstrata.java  # ▶️ Ponto de entrada da aplicação
+                ├── abstratas/
+                │   └── Navio.java             # 🏛️ Superclasse abstrata
+                ├── concretas/
+                │   ├── NavioPassageiro.java   # 🛳️ Subclasse para navios de passageiros
+                │   └── NavioPesqueiro.java    # 🎣 Subclasse para navios de pesca
+                └── tipoPesca/
+                    └── TipoPesca.java         # 🐠 Enum para os tipos de pesca
 
 ---
 
