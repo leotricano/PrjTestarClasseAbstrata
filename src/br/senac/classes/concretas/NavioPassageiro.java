@@ -11,7 +11,7 @@ import br.senac.classes.abstratas.Navio;
  * @author Leonardo
  */
 public class NavioPassageiro extends Navio{
-private int numeroPassageiros;
+private int totalPassageirosEmbarcados ,numeroPassageiros;
 
 //---------------------------GetSet-------------------------------------
 
@@ -56,53 +56,56 @@ private int numeroPassageiros;
 
 
     public void embarcarPassageiros(int embarcarPassageiros){
-        int totalPassageirosEmbarcados = 0;
-        int capacidade = calcularCapacidadePermitida();
+        
+        
         System.out.println("Tentativa de embarque");
         System.out.println("------------------AVISO--------------------");
-        System.out.println("Capacidade permitida: " + capacidade);
-        totalPassageirosEmbarcados = numeroPassageiros + embarcarPassageiros;
+        System.out.println("Capacidade permitida: " + numeroPassageiros);
+        
 
         System.out.println("----------------------UPDATE--------------------");
-        System.out.println("Passageiros embarcados: " + numeroPassageiros 
+        System.out.println("Passageiros embarcados: "
+                +totalPassageirosEmbarcados 
                 + " + passageiros embarcando: " 
-                + embarcarPassageiros + " Total "
-                + totalPassageirosEmbarcados );
-            
-        if(totalPassageirosEmbarcados == capacidade ){
-            numeroPassageiros = totalPassageirosEmbarcados;
+                + embarcarPassageiros + " Total ");
+        
+          int testeLogicoPassageiro = totalPassageirosEmbarcados 
+                  + embarcarPassageiros;
+          
+        if(testeLogicoPassageiro == numeroPassageiros ){
+            totalPassageirosEmbarcados += embarcarPassageiros ;
             System.out.println("-------------------AVISO---------------------------");
             System.out.println("Navio alcançou sua capacidade "
                     + "máxima de passageiros.");
-        }else if(totalPassageirosEmbarcados > capacidade){
+        }else if(testeLogicoPassageiro > numeroPassageiros){
             System.out.println("-------------------AVISO---------------------------");
             System.out.println("Navio ultrapassou a capacidade permitida,"
                     + " por favor desembarquem");
         }else{
             System.out.println("-------------------AVISO---------------------------");
-            System.out.println("Embarcando " + numeroPassageiros +
+            System.out.println("Embarcando " + embarcarPassageiros +
                 " passageiros no navio " + this.getNome()); 
-            numeroPassageiros += embarcarPassageiros;
+            totalPassageirosEmbarcados += embarcarPassageiros;
             
             
             System.out.println("-------------------UPDATE---------------------------");
-            System.out.println("Total de " + numeroPassageiros +
+            System.out.println("Total de " + totalPassageirosEmbarcados +
                 " passageiros no navio " + this.getNome()); 
         }
     }
     
     public void desembarcarPassageiros(int desembarcarPassageiros){
-        int totalPassageirosDesembarcados = 0;
+        
         System.out.println("-------------------AVISO---------------------------");      
-        System.out.println("Passageiros embarcados: " + numeroPassageiros 
+        System.out.println("Passageiros embarcados: " 
+                + totalPassageirosEmbarcados 
                 + " passageiros desembarcando: " 
                 + desembarcarPassageiros );
         
-        if(desembarcarPassageiros == numeroPassageiros){
-            totalPassageirosDesembarcados = 
-                    numeroPassageiros - desembarcarPassageiros;
+        if(desembarcarPassageiros == totalPassageirosEmbarcados){
+            totalPassageirosEmbarcados -= desembarcarPassageiros;
             
-            numeroPassageiros = totalPassageirosDesembarcados;
+            
             System.out.println("----------------------AVISO--------------------");    
             System.out.println("Navio vazio");
             
@@ -110,19 +113,18 @@ private int numeroPassageiros;
             System.out.println("----------------------AVISO--------------------");
             System.out.println("Impossivel, sistema corropido, reseta o Windows");
     }else{
-            totalPassageirosDesembarcados =
-                numeroPassageiros - desembarcarPassageiros;
-            numeroPassageiros = totalPassageirosDesembarcados;
+            totalPassageirosEmbarcados -= desembarcarPassageiros;
+            
             System.out.println("-------------------AVISO---------------------------");
             System.out.println("Estão sendo desembarcadas: " 
-                    + totalPassageirosDesembarcados 
+                    + totalPassageirosEmbarcados 
                     + " Pessoas");
         }
     }
     
     public void apresentarQuantidadePassageirosEmbarcados(){
         System.out.println("----------------------UPDATE--------------------");
-        System.out.println("Temos " + numeroPassageiros 
+        System.out.println("Temos " + totalPassageirosEmbarcados 
                 + " passageiros embarcados no navio " + this.getNome());
     }
    
@@ -132,7 +134,7 @@ private int numeroPassageiros;
             System.out.println("Desembarcando imediatamente "
                     + "todos os passageiros");
             
-            numeroPassageiros = 0;
+            totalPassageirosEmbarcados = 0;
         }else{
             System.out.println("----------------------AVISO--------------------");
             System.out.println("Não tem nenhum passageiro no navio " + this.getNome());
