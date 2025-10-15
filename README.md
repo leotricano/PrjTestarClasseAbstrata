@@ -1,6 +1,4 @@
-<p align="center">
-  <img src="https://i.imgur.com/kYn0h0s.png" alt="Java Logo" width="120"/>
-</p>
+
 
 <h1 align="center">PrjTestarClasseAbstrata</h1>
 
@@ -32,28 +30,6 @@ Este exercício solidifica os seguintes pilares da Programação Orientada a Obj
 * **📦 Encapsulamento:** Atributos protegidos com o modificador `private` e acessados de forma controlada através de métodos públicos.
 * **🏷️ Enumerações (Enums):** Utilização do `TipoPesca.java` para representar um conjunto fixo e seguro de constantes.
 
----
-
-## 📂 Estrutura do Projeto
-
-O projeto foi organizado em pacotes para uma melhor separação de responsabilidades e clareza do código.
-
-
-PrjTestarClasseAbstrata/
-└── src/
-    └── br/
-        └── senac/
-            └── classes/
-                ├── TestarClasseAbstrata.java  # ▶️ Ponto de entrada da aplicação
-                ├── abstratas/
-                │   └── Navio.java             # 🏛️ Superclasse abstrata
-                ├── concretas/
-                │   ├── NavioPassageiro.java   # 🛳️ Subclasse para navios de passageiros
-                │   └── NavioPesqueiro.java    # 🎣 Subclasse para navios de pesca
-                └── tipoPesca/
-                    └── TipoPesca.java         # 🐠 Enum para os tipos de pesca
-
----
 
 ## ▶️ Como Executar
 
@@ -61,7 +37,7 @@ Para rodar este projeto e ver a simulação em ação, siga os passos abaixo:
 
 1.  **Clone o Repositório:**
     ```bash
-    git clone https://[URL-DO-SEU-REPOSITORIO].git
+    git clone https://github.com/leotricano/PrjTestarClasseAbstrata
     ```
 2.  **Abra na sua IDE:**
     * Importe o projeto em sua IDE Java de preferência (Eclipse, IntelliJ IDEA, VS Code).
